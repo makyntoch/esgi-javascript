@@ -9,11 +9,11 @@ function type_check_v1(input, type){
     }
 }
 
-console.log(type_test_v1(null, "null"))
-console.log(type_test_v1(Array, "Array"))
-console.log(type_test_v1(1, "number"))
-console.log(type_test_v1("eric", "string"))
-console.log(type_test_v1(1.05, "float"))
+console.log(type_check_v1(null, "null"))
+console.log(type_check_v1(Array, "Array"))
+console.log(type_check_v1(1, "number"))
+console.log(type_check_v1("eric", "string"))
+console.log(type_check_v1(1.05, "float"))
 
 
 
