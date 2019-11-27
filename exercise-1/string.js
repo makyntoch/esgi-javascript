@@ -78,6 +78,7 @@ function yoda(str){
 console.log(yoda("Hello world"));
 
 function vig(str, code){
+  if(!validString(str)) return "";
   while(code.length < str.length){
     code += code;
   }
