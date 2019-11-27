@@ -54,3 +54,10 @@ function verlan(str){
 }
 
 console.log(verlan("Hello world"));
+
+function yoda(str){
+  if(!validString(str)) return "";
+  return str.split(" ").reverse().join(" ")
+}
+
+console.log(yoda("Hello world"));
