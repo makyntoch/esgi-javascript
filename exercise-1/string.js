@@ -81,13 +81,13 @@ function vig(str, code){
   while(code.length < str.length){
     code += code;
   }
-
-  return str.split("").map(function(chr, index){
+  let codeIndex = 0;
+  return str.split("").map(function(chr){
     chr = chr.toLowerCase();
     const chrCode = chr.charCodeAt(0) - "a".charCodeAt(0);
     if(chrCode<0 || chrCode>25) return chr;
 
-    const codeCode = code[index].charCodeAt(0) - "a".charCodeAt(0);
+    const codeCode = code[codeIndex++].charCodeAt(0) - "a".charCodeAt(0);
 
     const encodedCode = (chrCode + codeCode)%26;
 
