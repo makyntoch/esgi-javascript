@@ -54,7 +54,7 @@ function leet(str){
           return 0;
         case "U":
         case "u":
-          return "_";
+          return "(_)";
         case "Y":
         case "y":
           return 7;
