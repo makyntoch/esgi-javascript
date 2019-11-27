@@ -76,3 +76,22 @@ function yoda(str){
   return str.split(" ").reverse().join(" ")
 }
 console.log(yoda("Hello world"));
+
+function vig(str, code){
+  while(code.length < str.length){
+    code += code;
+  }
+
+  return str.split("").map(function(chr, index){
+    chr = chr.toLowerCase();
+    const chrCode = chr.charCodeAt(0) - "a".charCodeAt(0);
+    if(chrCode<0 || chrCode>25) return chr;
+
+    const codeCode = code[index].charCodeAt(0) - "a".charCodeAt(0);
+
+    const encodedCode = (chrCode + codeCode)%26;
+
+    return String.fromCharCode(encodedCode + "a".charCodeAt(0));
+  }).join("");
+}
+console.log(vig("Hello", "world"));
