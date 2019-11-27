@@ -1,4 +1,4 @@
-function type_test_v1(input, type){
+function type_check_v1(input, type){
     switch(input){
         case null:
             return type === "null"
