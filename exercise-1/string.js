@@ -30,9 +30,10 @@ console.log(camelCase("hel?lo_wor/ld caMel case 1"));
 
 function snake_case(str){
     if (!validString(str)) return "";
-    return str.replace(/[^a-zA-Z0-9 ]/gi, "").toLowerCase().split(' ').map(item => item).join("_");
+    return str.replace(/[^a-zA-Z0-9\\_ ]/gi, "").toLowerCase().split(' ').map(item => item).join("_");
 }
 
+console.log(snake_case("ToggleCase is_the coolest"));
 console.log(snake_case("hel?lo WorL/d sna!!ke ca:se9"));
 
 function leet(str){
