@@ -30,20 +30,36 @@ console.log(camelCase("hel?lo_wor/ld caMel case 1"));
 
 function snake_case(str){
     if (!validString(str)) return "";
-    return str.replace(/[^a-zA-Z0-9\\_ ]/gi, "").toLowerCase().split(" ").map(item => item).join("_");
+    return str.toLowerCase().replace(/[^\w]/gi, "_");
 }
 
-console.log(snake_case("hel?lo WorL/d sna!!ke ca:se9"));
+console.log(snake_case("hello?WorLd sna!ke 9case"));
 
 function leet(str){
     if (!validString(str)) return "";
     return str
-    .replace(/[a]/gi, 4)
-    .replace(/[e]/gi, 3)
-    .replace(/[i]/gi, 1)
-    .replace(/[o]/gi, 0)
-    .replace(/[u]/gi, '(_)')
-    .replace(/[y]/gi, 7)
+    .replace(/[aeiouy]/gi, function(chr){
+      switch(chr){
+        case "A":
+        case "a":
+          return 4;
+        case "E":
+        case "e":
+          return 3;
+        case "I":
+        case "i":
+          return 1;
+        case "O":
+        case "o":
+          return 0;
+        case "U":
+        case "u":
+          return "_";
+        case "Y":
+        case "y":
+          return 7;
+      }
+    })
 }
 
 console.log(leet("a e i o u y A E I O U Y"));
@@ -54,3 +70,9 @@ function verlan(str){
 }
 
 console.log(verlan("Hello world"));
+
+function yoda(str){
+  if(!validString(str)) return "";
+  return str.split(" ").reverse().join(" ")
+}
+console.log(yoda("Hello world"));
