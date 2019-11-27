@@ -78,7 +78,7 @@ function yoda(str){
 console.log(yoda("Hello world"));
 
 function vig(str, code){
-  if(!validString(str)) return "";
+  if(!validString(str) || !validString(code)) return "";
   while(code.length < str.length){
     code += code;
   }
@@ -95,4 +95,4 @@ function vig(str, code){
     return String.fromCharCode(encodedCode + "a".charCodeAt(0));
   }).join("");
 }
-console.log(vig("Hello", "world"));
+console.log(vig("hello", "world"));
