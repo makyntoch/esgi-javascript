@@ -19,17 +19,21 @@ console.log(capitalize("hello world capitalize"));
 
 function camelCase(str){
     if (!validString(str)) return "";
-    return str.replace(/[^a-zA-Z0-9 ]/gi, "").toLowerCase().split(' ').map(item => ucfirst(item)).join("");
+    return str
+      .replace(/[^a-zA-Z0-9 ]/gi, " ")
+      .toLowerCase()
+      .split(' ')
+      .map(item => ucfirst(item))
+      .join("");
 }
+console.log(camelCase("hel?lo_wor/ld caMel case 1"));
 
-console.log(camelCase("hel?lo wor/ld caMel case1"));
-
-function snakeCase(str){
+function snake_case(str){
     if (!validString(str)) return "";
     return str.replace(/[^a-zA-Z0-9 ]/gi, "").toLowerCase().split(' ').map(item => item).join("_");
 }
 
-console.log(snakeCase("hel?lo WorL/d sna!!ke ca:se9"));
+console.log(snake_case("hel?lo WorL/d sna!!ke ca:se9"));
 
 function leet(str){
     if (!validString(str)) return "";
