@@ -7,9 +7,9 @@ function type_check_v1(input, type){
     //     default:
     //         return type == typeof input
     // }
-    if(Array.isArray(input)) return type == "array";
-    if(input == null) return type == "null";
-    return type == typeof input;
+    if(Array.isArray(input)) return type === "array";
+    if(input === null) return type === "null";
+    return type === typeof input;
 }
 
 console.log(type_check_v1(null, "null"))
